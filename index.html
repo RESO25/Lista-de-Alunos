@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Lista de Alunos</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="css/estilo.css">
+    
+</head>
+<body onload="reload()"> 
+    <h1>Lista de Alunos</h1>
+
+    <div class="adds">
+        <input type="number" class="smol" id="addRM" name="addRM" placeholder="RM" />
+        <input type="text" id="addNome" name="addNome" placeholder="NOME" />
+        <input type="number" class="smol" id="add01" name="add01" placeholder="Prova 01" />
+        <input type="number" class="smol" id="add02" name="add02" placeholder="Prova 02" />
+        <div id="addBtn">
+            <button onclick="Adicionar()"><strong>Adicionar</strong></button>
+        </div>
+        <p id="confirm"></p>
+    </div>
+
+    <table>
+        <thead>
+            <th>RM</th>
+            <th>Nome</th>
+            <th>Prova 01</th>
+            <th>Prova 02</th>
+            <th>Média</th>
+            <th>Situação Final</th>
+        </thead>
+        <tbody id="addColuna">
+            <tr id="aluno1">
+                <td  class="info-rm">102544</td>
+                <td class="info-nome">ALINE DE CASTRO LIMA</td>
+                <td  class="info-nota01">5.5</td>
+                <td  class="info-nota02">6.0</td>
+                <td class="info-media">0</td>
+                <td class="info-situacao">-</td>
+            </tr>
+            <tr id="aluno2">
+                <td class="info-rm">102545</td>
+                <td class="info-nome">ANNA DE LIMA SIQUEIRA</td>
+                <td  class="info-nota01">7.5</td>
+                <td  class="info-nota02">8.5</td>
+                <td class="info-media">0</td>
+                <td class="info-situacao">-</td>
+            </tr>
+            <tr id="aluno3">
+                <td class="info-rm">102546</td>
+                <td class="info-nome">CAROLINA ROCHA DA SILVA</td>
+                <td class="info-nota01">5.0</td>
+                <td class="info-nota02">3.0</td>
+                <td class="info-media">0</td>
+                <td class="info-situacao">-</td>
+            </tr>
+            <tr id="aluno4">
+                <td class="info-rm">102547</td>
+                <td class="info-nome">CAROLINE SANTOS</td>
+                <td class="info-nota01">1.0</td>
+                <td class="info-nota02">8.0</td>
+                <td class="info-media">0</td>
+                <td class="info-situacao">-</td>
+            </tr>
+            <tr id="aluno5">
+                <td class="info-rm">102548</td>
+                <td class="info-nome">DAVI FRANSISCO CORREA</td>
+                <td  class="info-nota01">0.0</td>
+                <td  class="info-nota02">7.0</td>
+                <td class="info-media">0</td>
+                <td class="info-situacao">-</td>
+            </tr>
+            <tr id="aluno6">
+                <td class="info-rm">102549</td>
+                <td class="info-nome">DAVID ONISHIRO</td>
+                <td  class="info-nota01">10.0</td>
+                <td  class="info-nota02">8.0</td>
+                <td class="info-media">0</td>
+                <td class="info-situacao">-</td>
+            </tr>
+            <tr id="aluno7">
+                <td class="info-rm">102550</td>
+                <td class="info-nome">EDUARDO PINHEIRO SILVA</td>
+                <td  class="info-nota01">6.0</td>
+                <td  class="info-nota02">8.0</td>
+                <td class="info-media">0</td>
+                <td class="info-situacao">-</td>
+            </tr>
+            <tr id="aluno8">
+                <td class="info-rm">102551</td>
+                <td class="info-nome">FELIPE PEREIRA BARBOSA</td>
+                <td  class="info-nota01">9.0</td>
+                <td  class="info-nota02">5.0</td>
+                <td class="info-media">0</td>
+                <td class="info-situacao">-</td>
+            </tr>
+            <tr id="aluno9">
+                <td class="info-rm">102552</td>
+                <td class="info-nome">FELIPE COSTA</td>
+                <td  class="info-nota01">10.0</td>
+                <td  class="info-nota02">9.5</td>
+                <td class="info-media">0</td>
+                <td class="info-situacao">-</td>
+            </tr>
+        </tbody>
+    </table>
+    <script type="text/javascript" src="js/script.js"></script>
+</body>
+</html>
