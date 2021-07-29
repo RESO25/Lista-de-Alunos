@@ -247,7 +247,12 @@ function Adicionar()
                 }
                 else
                 {
-                        document.querySelector("#confirm").innerHTML = "";
+                    nome1.value = "";
+                    RM1.value = "";
+                    nota011.value = "";
+                    nota021.value = "";
+
+                    document.querySelector("#confirm").innerHTML = "";
                     if (media>=5)
                     {
                         var situacao = "APROVADO";
@@ -284,10 +289,4 @@ function Adicionar()
             }
         }
     }
-
-    nome1.value = "";
-    RM1.value = "";
-    nota011.value = "";
-    nota021.value = "";
-
 }
