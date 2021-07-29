@@ -210,6 +210,12 @@ function Adicionar()
     var RM = document.querySelector("#addRM").value;
     var nota01 = document.querySelector("#add01").value;
     var nota02 = document.querySelector("#add02").value;
+
+    var nome1 = document.querySelector("#addNome");
+    var RM1 = document.querySelector("#addRM");
+    var nota011 = document.querySelector("#add01");
+    var nota021 = document.querySelector("#add02");
+
     var media = (parseFloat(nota01) + parseFloat(nota02))/2;
 
     var addColuna = document.getElementById("addColuna"); 
@@ -278,4 +284,10 @@ function Adicionar()
             }
         }
     }
+
+    nome1.value = "";
+    RM1.value = "";
+    nota011.value = "";
+    nota021.value = "";
+
 }
