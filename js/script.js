@@ -13,7 +13,7 @@ for (var indice=0; indice<aluno.length; indice++)
 
     aluno[indice].querySelector(".info-media").textContent = media_011;
 
-    localSituacao.textContent = AprovarAluno(media_01);
-    localSituacao.classList.add(MudarCor(media_01));    
+    AprovarAluno(media_01, aluno[indice]);   
 }
 
+colorirLinhas();

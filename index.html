@@ -10,32 +10,31 @@
     
 </head>
 <body> 
-    <h1>Lista de Alunos</h1>
+    <table><th id="listaAlunos">Lista de Alunos</th></table>
 
         <div class="barraFiltro">
             <input type="text" name="txtFiltro" id="txtFiltro" />
             <button><strong>Buscar</strong></button>
             <button id="btnNovo"><strong>Novo</strong></button>
-
         </div>
 
     <div class="bloqueio escondido"></div>
     <div class="adds escondido">
         <label>Nome: </label>
-        <input type="text" id="addNome" name="addNome" placeholder="NOME" />
+        <input type="text" id="txtNome" name="txtNome" placeholder="NOME" />
         <p>
             <label>RM: </label>
-            <input type="number" min="0" max="99999" class="smol" id="addRM" name="addRM" placeholder="RM" />
+            <input type="number" min="0" max="99999" class="smol" id="txtRM" name="txtRM" placeholder="RM" />
             <label>Nota 1: </label>
-            <input type="number" min="0" max="10" class="smol" id="add01" name="add01" placeholder="Prova 01" />
+            <input type="number" min="0" max="10" class="smol" id="txtNota01" name="txtNota01" placeholder="Nota 01" />
             <label>Nota 2:</label>
-            <input type="number" min="0" max="10" class="smol" id="add02" name="add02" placeholder="Prova 02" />
+            <input type="number" min="0" max="10" class="smol" id="txtNota02" name="txtNota02" placeholder="Nota 02" />
         </p>
         <p id="botoes">
-            <button onclick="Adicionar()"><strong>Adicionar</strong></button>
-            <button id="btnCancelar"><strong>Cancelar</strong></button>
+            <button class="btnAdd" id="btnAdicionar"><strong>Adicionar</strong></button>
+            <button class="btnAdd" id="btnCancelar"><strong>Cancelar</strong></button>
         </p>
-        <p id="confirm"></p>
+        <p id="msg"></p>
     </div>
     
     <table>
