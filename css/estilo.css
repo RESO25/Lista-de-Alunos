@@ -1,4 +1,10 @@
 
+:root{
+    --cinza: #525252;
+    --branco: #fff;
+    --vermelho: #f02a1f;
+}
+
 html{height:100%; width:100%}
 
 * {
@@ -7,27 +13,32 @@ html{height:100%; width:100%}
 
 h1 {
     text-align:center;
-    color: #525252;
+    color: var(--cinza);
 }
 
 table {
     margin:auto;
-    background-color: #525252;
+    background-color: var(--cinza);
     border-radius: 3px;
+    width: 850px;
 }
 
 th {
-    color: #fff;
+    color: var(--branco);
     font-size: 18px;
-    border: 3px solid #525252;
-    background-color: #525252;
+    border: 3px solid var(--cinza);
+    background-color: var(--cinza);
     padding: 2px 5px;
+}
+
+.txtAlign {
+    text-align:center
 }
 
 td {
     padding: 2px 5px;
-    background-color: #fff;
-    color: #525252;
+    background-color: var(--branco);
+    color: var(--cinza);
 }
 
 div {
@@ -37,14 +48,18 @@ div {
 }
 
 input {
-    border: solid 2px #525252;
+    border: solid 2px var(--cinza);
     padding: 2px 5px;
-    width:222.8px;
+    width:382.8px;
     height:24.8px;
     display:inline;
     text-transform:uppercase;
     BOX-SIZING:BORDER-box;
 
+}
+
+#listaAlunos {
+    font-size:30px;
 }
 
 input:focus 
@@ -62,13 +77,28 @@ td:focus
 }
 
 .bloqueio{
-    width:100%;
-    height:100%;
-    position:fixed;
-    top:0;
-    left:0;
-    background-color:#fff;
-    opacity:0.85;
+    width: 100vw;
+    height: 150vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: var(--branco);
+    opacity: 0.85;
+    margin-top: -8px;
+}
+
+.btnDel{
+    text-align:center;
+    cursor:pointer;
+    font-family: 'Nunito', sans-serif;
+    margin:0;
+    font-size:16px;
+    color:var(--vermelho);
+}
+
+.btnDel::selection{
+    background:var(--branco);
+    color:var(--vermelho);
 }
 
 .escondido
@@ -77,9 +107,9 @@ td:focus
 }
 
 .adds {
-    background-color:#fff;
+    background-color:var(--branco);
     width: 440px;
-    border: solid 2px #525252;
+    border: solid 2px var(--cinza);
     padding:15px;
     padding-bottom:0;
     text-align:center;
@@ -90,38 +120,57 @@ td:focus
     box-shadow: 5px 5px 5px 0 #babaca;
 }
 
+.adds input {
+    margin-bottom:10px;
+}
+
 /*barra de filtro*/
 
 .barraFiltro{
-    width: 681px;
+    width: 850px;
+    height: 46px;
     margin: auto;
-    margin-top: 20px;
-    margin-bottom: 20px;
+    margin-top: 15px;
+    margin-bottom: 15px;
+    display: grid;
+    grid-template-columns: auto 73px 73px;
+    grid-column-gap: 15px;
+    align-items: start;
+    justify-content: start;
+    justify-items: center;
+    align-content: center;
 }
+
 
 #txtFiltro{
-    width: 460px;
-}
-
-h4 {
-    color:#525252;
+    width: 673px;
+    height: 41px;
+    font-size: 16px;
+    margin-bottom: 1.5px;
 }
 
 #botoes{
     text-align:center;
 }
 
+.btnAdd {
+    width:96px;
+}
+
+.linhaImpar td{
+    background-color:rgb(245, 245, 245);
+}
+
 button {
-    width: 96px;
+    width: 73px;
     height: 38px;
     font-size: 18px;
-    color: #fff;
-    background-color: #525252;
-    border: solid 2px #525252;
+    color: var(--branco);
+    background-color: var(--cinza);
+    border: solid 2px var(--cinza);
     border-radius: 3px;
     box-shadow: 0 4px rgb(39 39 39);
     cursor: pointer;
-    margin:5px;
 }
 
 button:active {
@@ -131,14 +180,8 @@ button:active {
     transform:scale(1);
 }
 
-.aprovado {
-    background-color:#1ed42d;
-    color: white;
-}
-
-.reprovado {
-    background-color:#f02a1f;
-    color: white;
+.reprovado td, #msg {
+    color:var(--vermelho);
 }
 
 .info-nome {
