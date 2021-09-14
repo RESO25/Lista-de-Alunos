@@ -7,18 +7,38 @@ function CalcularMedia(nota_01, nota_02)
 
 function AdequarFormato(media_01)
 {
-    return media_01.toFixed(1).toString().replace(".",",");
+    return FormatarComVirgula( media_01.toFixed(1) );
 }
 
-function AprovarAluno(media_01)
+function FormatarComVirgula(nota){
+    return nota.toString().replace(".",",");
+}
+
+function CalcAprovacao(media){
+
+    if (media > 5){
+        return "APROVADO"
+    }
+    else{
+        return "REPROVADO"
+    }
+
+}
+
+function AprovarAluno(media_01, linha)
 {   
+    var local = linha.querySelector(".info-situacao");
+
     if (media_01 >= 5)
     {
-        return "APROVADO";
+        
+        local.textContent = "APROVADO";
+        linha.classList.add("aprovado")
     }
     else 
     {
-        return "REPROVADO";
+        local.textContent = "REPROVADO";
+        linha.classList.add("reprovado")
     }
 }
 
@@ -34,72 +54,60 @@ function MudarCor(media_01)
     }
 }
 
-function Adicionar() 
-{
+function colorirLinhas() {
+
+    var linhaAluno = document.querySelectorAll(".aluno");
     
-    var nome    = document.querySelector("#addNome").value;
-    var RM      = document.querySelector("#addRM").value;
-    var nota01  = document.querySelector("#add01").value;
-    var nota02  = document.querySelector("#add02").value;
 
-    var nome1   = document.querySelector("#addNome");
-    var RM1     = document.querySelector("#addRM");
-    var nota011 = document.querySelector("#add01");
-    var nota021 = document.querySelector("#add02");
+    for (var i = 0; i < linhaAluno.length; i++){
+        
+        linhaAluno[i].classList.remove("linhaImpar");
 
-    var media = (parseFloat(nota01) + parseFloat(nota02))/2;
+        if ( (i+1) % 2 == 0 ){
 
-    var addColuna = document.getElementById("addColuna"); 
 
-        if (RM == "" || nome == "" || nota01 == "" || nota02 == "")
-    { 
-        document.querySelector("#confirm").innerHTML = "<h4>Insira informações válidas.</h4>";
-    }
-    else
-    {
-        nome1.value = "";
-        RM1.value = "";
-        nota011.value = "";
-        nota021.value = "";
+            linhaAluno[i].classList.add("linhaImpar");
 
-        document.querySelector("#confirm").innerHTML = "";
-        if (media>=5)
-        {
-            var situacao = "APROVADO";
         }
-        else 
-        {
-            var situacao = "REPROVADO"
-        }
-        if (media>=5)
-        {
-            addColuna.innerHTML+= `
-            <tr class="aluno">
-            <td class="info-rm">${RM}</td>
-            <td class="info-nome">${nome}</td>
-            <td contenteditable="true" class="info-nota01">${nota01}</td>
-            <td contenteditable="true" class="info-nota02">${nota02}</td>
-            <td class="info-media">${media}</td>
-            <td class="info-situacao aprovado">${situacao}</td>
-            </tr> `
-        }
-        else 
-        {
-            addColuna.innerHTML+= `
-            <tr>
-            <td class="info-rm">${RM}</td>
-            <td class="info-nome">${nome}</td>
-            <td contenteditable="true" class="info-nota01">${nota01}</td>
-            <td contenteditable="true" class="info-nota02">${nota02}</td>
-            <td class="info-media">${media}</td>
-            <td class="info-situacao reprovado">${situacao}</td>
-            </tr> `
-        }
-
-        var telaBloqueio = document.querySelector(".bloqueio");
-        var telaAlunoNovo = document.querySelector(".adds");
-
-        telaBloqueio.classList.add("escondido");
-        telaAlunoNovo.classList.add("escondido");
     }
 }
+
+var btnDels = document.querySelectorAll(".btnDel");
+
+for (var i = 0; i<btnDels.length; i++){
+
+    btnDels[i].addEventListener('click', excluirAluno);
+
+}
+function excluirAluno() {
+    this.parentNode.parentNode.remove();
+    colorirLinhas();
+}
+
+document.getElementById("txtNome").addEventListener("keyup", function apertarEnter(event) {
+    event.preventDefault();
+    if (event.keyCode === 13) {
+        document.getElementById("btnAdicionar").click();
+    }
+});
+
+document.getElementById("txtRM").addEventListener("keyup", function apertarEnter(event) {
+    event.preventDefault();
+    if (event.keyCode === 13) {
+        document.getElementById("btnAdicionar").click();
+    }
+});
+
+document.getElementById("txtNota01").addEventListener("keyup", function apertarEnter(event) {
+    event.preventDefault();
+    if (event.keyCode === 13) {
+        document.getElementById("btnAdicionar").click();
+    }
+});
+
+document.getElementById("txtNota02").addEventListener("keyup", function apertarEnter(event) {
+    event.preventDefault();
+    if (event.keyCode === 13) {
+        document.getElementById("btnAdicionar").click();
+    }
+});
